@@ -39,6 +39,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24E6B0041EE2B9EB005AFDD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7C194F51D3C6F4E00FC5147 /* AppDelegate.swift */,
+				B7C194FC1D3C6F4E00FC5147 /* Assets.xcassets */,
+				B7C194FE1D3C6F4E00FC5147 /* LaunchScreen.storyboard */,
+				B7C195011D3C6F4E00FC5147 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B7C194E91D3C6F4E00FC5147 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +69,10 @@
 		B7C194F41D3C6F4E00FC5147 /* Animals */ = {
 			isa = PBXGroup;
 			children = (
-				B7C194F51D3C6F4E00FC5147 /* AppDelegate.swift */,
+				24E6B0041EE2B9EB005AFDD6 /* Supporting Files */,
 				B7C194F71D3C6F4E00FC5147 /* AnimalListViewController.swift */,
 				B7C195091D3C6FF400FC5147 /* AnimalViewController.swift */,
 				B7C194F91D3C6F4E00FC5147 /* Main.storyboard */,
-				B7C194FC1D3C6F4E00FC5147 /* Assets.xcassets */,
-				B7C194FE1D3C6F4E00FC5147 /* LaunchScreen.storyboard */,
-				B7C195011D3C6F4E00FC5147 /* Info.plist */,
 				B7C195071D3C6FA700FC5147 /* learn_ios.png */,
 			);
 			path = Animals;
