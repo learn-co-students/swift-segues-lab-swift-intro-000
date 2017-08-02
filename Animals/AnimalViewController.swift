@@ -9,4 +9,46 @@
 import UIKit
 
 class AnimalViewController: UIViewController {
+    @IBOutlet weak var bigLabel: UILabel!
+    @IBOutlet weak var smallLabel: UILabel!
+    
+    var animal: String?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let animal = animal {
+            smallLabel?.text = animal
+            
+            let name = forEmoji(animal)
+            bigLabel?.text = name
+            navigationItem.title = animal
+        }
+    }
+    
+    func forEmoji(_ name: String) -> String {
+        switch name {
+        case "Dog" :
+            return "🐶"
+        case "Cat" :
+            return "🐱"
+        case "Mouse" :
+            return "🐭"
+        case "Hamster" :
+            return "🐹"
+        case "Bunny" :
+            return "🐰"
+        case "Panda" :
+            return "🐼"
+        case "Lion" :
+            return "🦁"
+        case "Pig" :
+            return "🐷"
+        case "Frog" :
+            return "🐸"
+        case "Octopus" :
+            return "🐙"
+        default :
+           return "Not within choices"
+        }
+    }
 }
