@@ -9,4 +9,34 @@
 import UIKit
 
 class AnimalListViewController: UITableViewController {
+    let animals = [
+        "Dog",
+        "Cat",
+        "Mouse",
+        "Hamster",
+        "Bunny",
+        "Panda",
+        "Lion",
+        "Pig",
+        "Frog",
+        "Octopus"
+    ]
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return animals.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalsCell", for: indexPath)
+        let animal = animals[indexPath.row]
+        cell.textLabel?.text = animal
+        return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AnimalViewController, let indexPath = tableView.indexPathForSelectedRow{
+            destination.animal = animals[(indexPath as IndexPath).row]
+        }
+    }
 }
