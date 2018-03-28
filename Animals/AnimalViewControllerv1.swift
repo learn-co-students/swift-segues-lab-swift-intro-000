@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimalViewController: UIViewController {
+class AnimalViewControllerv1: UIViewController {
     var animal:String?
     @IBOutlet weak var AnimalEmojiLabel: UILabel!
     @IBOutlet weak var AnimalLabel: UILabel!
@@ -16,11 +16,11 @@ class AnimalViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let animal = animal {
-            AnimalLabel?.text = animal
+            AnimalEmojiLabel?.text = animal
             
-            let animalEmoji = animalNameToEmoji(animal)
-            AnimalEmojiLabel?.text = animalEmoji
-            navigationItem.title = animal
+            let animalName = emojiToName(animal)
+            AnimalLabel?.text = animalName
+            navigationItem.title = animalName
         }
     }
    
@@ -46,33 +46,6 @@ class AnimalViewController: UIViewController {
             return "Frog"
         case "🐙":
             return "Octopus"
-        default:
-            return ""
-        }
-    }
-    
-    fileprivate func animalNameToEmoji(_ animalName: String) -> String {
-        switch animalName {
-        case "Dog":
-            return "🐶"
-        case "Cat":
-            return "🐱"
-        case "Mouse":
-            return "🐭"
-        case "Hamster":
-            return "🐹"
-        case "Bunny":
-            return "🐰"
-        case "Panda":
-            return "🐼"
-        case "Lion":
-            return "🦁"
-        case "Pig":
-            return "🐷"
-        case "Frog":
-            return "🐸"
-        case "Octopus":
-            return "🐙"
         default:
             return ""
         }
