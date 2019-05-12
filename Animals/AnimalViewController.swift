@@ -8,5 +8,22 @@
 
 import UIKit
 
-class AnimalViewController: UIViewController {
+class AnimalViewController: UIViewController
+{
+    var animalEmoji = ["🐶", "🐱", "🐭", "🐹", "🐰", "🐼", "🦁", "🐷", "🐸", "🐙" ]
+    
+    @IBOutlet weak var labelAnimalText: UILabel!
+    @IBOutlet weak var labelAnimalIcon: UILabel!
+    
+    var animalBeingSet: Int?
+    var animalName: String?
+    
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        labelAnimalIcon.text = animalEmoji[animalBeingSet!]
+        labelAnimalText.text = animalName
+        self.title = animalName
+    }
+    
 }
